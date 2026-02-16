@@ -1,0 +1,1 @@
+import{o as t,e as o,i as s}from"../modules/vue-Dg3IqDWV.js";import{b as n}from"../index-4jaLyrvz.js";const l={},r={class:"slidev-layout default"};function c(e,a){return t(),o("div",r,[s(e.$slots,"default")])}const u=n(l,[["render",c],["__file","/home/runner/work/clinical-turing-test/clinical-turing-test/node_modules/@slidev/client/layouts/default.vue"]]);export{u as I};
