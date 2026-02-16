@@ -29,6 +29,10 @@ Medical Informatics Elective · 5 minutes
 
 ## Why We Need Synthetic Clinical Text
 
+---
+
+## Why We Need Synthetic Clinical Text
+
 <div class="grid grid-cols-2 gap-10 mt-6">
 <div>
 
@@ -45,46 +49,68 @@ Generate **realistic, privacy-safe** discharge summaries that keep clinical logi
 </div>
 <div>
 
-<div class="flow-diagram">
-  <div class="flow-row">
-    <div v-motion class="flow-node danger" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.1 } }">
-      Real EHR Text
-    </div>
-    <div class="flow-arrow">→</div>
-    <div v-motion class="flow-node warn" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.2 } }">
-      Blocked Sharing
-      <div class="flow-sub">Privacy Risk</div>
-    </div>
-  </div>
+```mermaid {scale: 1.0}
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'fontFamily': 'Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial',
+    'fontSize': '9px',
+    'lineColor': '#6366f1',
+    'clusterBkg': '#f8fafc',
+    'clusterBorder': '#94a3b8',
+    'primaryColor': '#e0e7ff',
+    'primaryBorderColor': '#4f46e5',
+    'primaryTextColor': '#1e1b4b'
+  },
+  'flowchart': {
+    'useMaxWidth': true,
+    'htmlLabels': false,
+    'nodeSpacing': 20,
+    'rankSpacing': 28,
+    'curve': 'catmullRom'
+  }
+}}%%
+flowchart LR
+  S([Clinical Need\nEHR not shareable])
 
-  <div class="flow-row">
-    <div v-motion class="flow-node muted" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.3 } }">
-      De-ID
-    </div>
-    <div class="flow-arrow">→</div>
-    <div v-motion class="flow-node muted" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.4 } }">
-      Context Loss
-    </div>
-    <div class="flow-arrow">→</div>
-    <div v-motion class="flow-node muted" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.5 } }">
-      Low Utility
-    </div>
-  </div>
+  subgraph BAD[Current Barrier]
+    direction TB
+    A1[De-ID]
+    A2[Context Loss]
+    A3[Low NLP Utility]
+    A4[Research Blocked]
+    A1 --> A2 --> A3 --> A4
+  end
 
-  <div class="flow-row">
-    <div v-motion class="flow-node good" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.6 } }">
-      Synthetic Text
-    </div>
-    <div class="flow-arrow">→</div>
-    <div v-motion class="flow-node good" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.7 } }">
-      Shareable
-    </div>
-    <div class="flow-arrow">→</div>
-    <div v-motion class="flow-node good" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.8 } }">
-      Model Training
-    </div>
-  </div>
-</div>
+  subgraph GOOD[Synthetic Path]
+    direction TB
+    B1[Synthetic Generation]
+    B2[Safety Checks]
+    B3[Shareable Data]
+    B4[Training + Research]
+    B1 --> B2 --> B3 --> B4
+  end
+
+  S --> A1
+  S --> B1
+
+  classDef bad fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#7f1d1d;
+  classDef good fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d;
+  classDef neutral fill:#e0e7ff,stroke:#4f46e5,stroke-width:2px,color:#1e1b4b;
+  classDef badGroup fill:#fff1f2,stroke:#ef4444,stroke-width:1.5px,color:#7f1d1d;
+  classDef goodGroup fill:#ecfdf5,stroke:#22c55e,stroke-width:1.5px,color:#14532d;
+
+  class S neutral;
+  class A1,A2,A3,A4 bad;
+  class B1,B2,B3,B4 good;
+  class BAD badGroup;
+  class GOOD goodGroup;
+
+  linkStyle 0,1,2,3 stroke:#ef4444,stroke-width:2px;
+  linkStyle 4,5,6,7 stroke:#16a34a,stroke-width:2px;
+  linkStyle 8 stroke:#ef4444,stroke-width:2.5px;
+  linkStyle 9 stroke:#16a34a,stroke-width:2.5px;
+```
 
 </div>
 </div>
