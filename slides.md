@@ -49,67 +49,29 @@ Generate **realistic, privacy-safe** discharge summaries that keep clinical logi
 </div>
 <div>
 
-```mermaid {scale: 1.0}
-%%{init: {
-  'theme': 'base',
-  'themeVariables': {
-    'fontFamily': 'Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial',
-    'fontSize': '9px',
-    'lineColor': '#6366f1',
-    'clusterBkg': '#f8fafc',
-    'clusterBorder': '#94a3b8',
-    'primaryColor': '#e0e7ff',
-    'primaryBorderColor': '#4f46e5',
-    'primaryTextColor': '#1e1b4b'
-  },
-  'flowchart': {
-    'useMaxWidth': true,
-    'htmlLabels': false,
-    'nodeSpacing': 20,
-    'rankSpacing': 28,
-    'curve': 'catmullRom'
-  }
-}}%%
-flowchart LR
-  S([Clinical Need\nEHR not shareable])
+```mermaid {scale: 0.82}
+flowchart TD
+  S[Clinical Need]
+  A1[De-ID]
+  A2[Context Loss]
+  A3[Lower NLP Utility]
+  A4[Research Blocked]
 
-  subgraph BAD[Current Barrier]
-    direction TB
-    A1[De-ID]
-    A2[Context Loss]
-    A3[Low NLP Utility]
-    A4[Research Blocked]
-    A1 --> A2 --> A3 --> A4
-  end
+  B1[Synthetic Generation]
+  B2[Safety Checks]
+  B3[Shareable Data]
+  B4[Training & Research]
 
-  subgraph GOOD[Synthetic Path]
-    direction TB
-    B1[Synthetic Generation]
-    B2[Safety Checks]
-    B3[Shareable Data]
-    B4[Training + Research]
-    B1 --> B2 --> B3 --> B4
-  end
+  S --> A1 --> A2 --> A3 --> A4
+  S --> B1 --> B2 --> B3 --> B4
 
-  S --> A1
-  S --> B1
-
-  classDef bad fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#7f1d1d;
-  classDef good fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d;
-  classDef neutral fill:#e0e7ff,stroke:#4f46e5,stroke-width:2px,color:#1e1b4b;
-  classDef badGroup fill:#fff1f2,stroke:#ef4444,stroke-width:1.5px,color:#7f1d1d;
-  classDef goodGroup fill:#ecfdf5,stroke:#22c55e,stroke-width:1.5px,color:#14532d;
+  classDef bad fill:#fef2f2,stroke:#b91c1c,stroke-width:1.2px,color:#7f1d1d;
+  classDef good fill:#f0fdf4,stroke:#15803d,stroke-width:1.2px,color:#14532d;
+  classDef neutral fill:#f8fafc,stroke:#64748b,stroke-width:1.2px,color:#334155;
 
   class S neutral;
   class A1,A2,A3,A4 bad;
   class B1,B2,B3,B4 good;
-  class BAD badGroup;
-  class GOOD goodGroup;
-
-  linkStyle 0,1,2,3 stroke:#ef4444,stroke-width:2px;
-  linkStyle 4,5,6,7 stroke:#16a34a,stroke-width:2px;
-  linkStyle 8 stroke:#ef4444,stroke-width:2.5px;
-  linkStyle 9 stroke:#16a34a,stroke-width:2.5px;
 ```
 
 </div>
