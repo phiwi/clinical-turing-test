@@ -47,42 +47,42 @@ Generate **realistic, privacy-safe** discharge summaries that keep clinical logi
 
 <div class="flow-diagram">
   <div class="flow-row">
-    <Motion tag="div" class="flow-node danger" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.1 } }">
+    <div v-motion class="flow-node danger" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.1 } }">
       Real EHR Text
-    </Motion>
+    </div>
     <div class="flow-arrow">→</div>
-    <Motion tag="div" class="flow-node warn" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.2 } }">
+    <div v-motion class="flow-node warn" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.2 } }">
       Blocked Sharing
       <div class="flow-sub">Privacy Risk</div>
-    </Motion>
+    </div>
   </div>
 
   <div class="flow-row">
-    <Motion tag="div" class="flow-node muted" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.3 } }">
+    <div v-motion class="flow-node muted" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.3 } }">
       De-ID
-    </Motion>
+    </div>
     <div class="flow-arrow">→</div>
-    <Motion tag="div" class="flow-node muted" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.4 } }">
+    <div v-motion class="flow-node muted" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.4 } }">
       Context Loss
-    </Motion>
+    </div>
     <div class="flow-arrow">→</div>
-    <Motion tag="div" class="flow-node muted" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.5 } }">
+    <div v-motion class="flow-node muted" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.5 } }">
       Low Utility
-    </Motion>
+    </div>
   </div>
 
   <div class="flow-row">
-    <Motion tag="div" class="flow-node good" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.6 } }">
+    <div v-motion class="flow-node good" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.6 } }">
       Synthetic Text
-    </Motion>
+    </div>
     <div class="flow-arrow">→</div>
-    <Motion tag="div" class="flow-node good" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.7 } }">
+    <div v-motion class="flow-node good" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.7 } }">
       Shareable
-    </Motion>
+    </div>
     <div class="flow-arrow">→</div>
-    <Motion tag="div" class="flow-node good" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.8 } }">
+    <div v-motion class="flow-node good" :initial="{ opacity: 0, y: 12 }" :enter="{ opacity: 1, y: 0, transition: { delay: 0.8 } }">
       Model Training
-    </Motion>
+    </div>
   </div>
 </div>
 
@@ -196,5 +196,6 @@ If the test is passed, we unlock privacy-safe NLP research.
 </div>
 
 <div class="mt-8 text-sm opacity-70">
-Contact: Philipp Wiesenbach · Computational Cardiology, UKHD
+Contact: Philipp Wiesenbach · Emre Calik
+Dieterichlab, Computational Cardiology
 </div>
