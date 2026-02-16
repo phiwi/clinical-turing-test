@@ -1,0 +1,19 @@
+{
+  "name": "wft26-slidev",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build slides.md",
+    "export:pdf": "slidev export --format pdf --output slides.pdf"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^0.48.5",
+    "markdown-it-container": "^3.0.0",
+    "playwright-chromium": "^1.56.1",
+    "slidev-theme-academic": "^2.1.0"
+  },
+  "dependencies": {
+    "@slidev/theme-default": "^0.25.0"
+  }
+}
