@@ -9,7 +9,7 @@ themeConfig:
   paginationX: r
   paginationY: b
 coverAuthor: "Philipp Wiesenbach"
-coverDate: 16.02.2026
+coverDate: 12.03.2026
 coverBackgroundUrl: cover.jpg
 coverBackgroundSource: Kumar Shridhar
 coverBackgroundSourceUrl: https://chatbotsmagazine.com/how-close-are-chatbots-to-pass-turing-test-33f27b18305e 
@@ -50,6 +50,7 @@ Generate **realistic, privacy-safe** discharge summaries that keep clinical logi
 <div>
 
 ```mermaid {scale: 0.82}
+%%{init: {'theme':'base','themeVariables': {'primaryColor':'#f8fafc','primaryTextColor':'#334155','primaryBorderColor':'#64748b','lineColor':'#64748b','fontSize':'14px'}, 'flowchart': {'curve': 'linear', 'htmlLabels': false}} }%%
 flowchart TD
   S[Clinical Need]
   A1[De-ID]
@@ -83,6 +84,7 @@ flowchart TD
 
 <div class="grid grid-cols-2 gap-10 mt-6">
 <div>
+
 ### Inputs
 
 - Archetype scenarios from clinicians
@@ -98,16 +100,19 @@ flowchart TD
 <div>
 
 ```mermaid
-graph LR
+%%{init: {'theme':'base','themeVariables': {'primaryColor':'#f8fafc','primaryTextColor':'#334155','primaryBorderColor':'#64748b','lineColor':'#64748b','fontSize':'14px'}, 'flowchart': {'curve': 'linear', 'htmlLabels': false}} }%%
+graph TD
   A[Clinical Archetype] --> B[Prompting + Templates]
   B --> C[LLM Generation]
   C --> D[Constraint Checks]
   D --> E[Synthetic Discharge]
 
-  style A fill:#e0f2fe,stroke:#0284c7
-  style B fill:#ede9fe,stroke:#7c3aed
-  style D fill:#fef9c3,stroke:#eab308
-  style E fill:#dcfce7,stroke:#16a34a
+  classDef bad fill:#fef2f2,stroke:#b91c1c,stroke-width:1.2px,color:#7f1d1d;
+  classDef good fill:#f0fdf4,stroke:#15803d,stroke-width:1.2px,color:#14532d;
+  classDef neutral fill:#f8fafc,stroke:#64748b,stroke-width:1.2px,color:#334155;
+
+  class A,B,C,D neutral;
+  class E good;
 ```
 
 </div>
@@ -135,6 +140,7 @@ Hallucinated meds, impossible timelines, missing follow-up.
 <div>
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'primaryColor':'#f8fafc','primaryTextColor':'#334155','primaryBorderColor':'#64748b','lineColor':'#64748b','fontSize':'14px'}, 'flowchart': {'curve': 'linear', 'htmlLabels': false}} }%%
 graph TD
   G[Generated Letter] --> C1[Clinical Rules]
   G --> C2[Style Consistency]
@@ -143,10 +149,13 @@ graph TD
   Q -->|Pass| S[Shareable Dataset]
   Q -->|Fail| R[Regenerate]
 
-  style G fill:#ede9fe,stroke:#7c3aed
-  style Q fill:#fef9c3,stroke:#eab308
-  style S fill:#dcfce7,stroke:#16a34a
-  style R fill:#fee2e2,stroke:#ef4444
+  classDef bad fill:#fef2f2,stroke:#b91c1c,stroke-width:1.2px,color:#7f1d1d;
+  classDef good fill:#f0fdf4,stroke:#15803d,stroke-width:1.2px,color:#14532d;
+  classDef neutral fill:#f8fafc,stroke:#64748b,stroke-width:1.2px,color:#334155;
+
+  class G,C1,C2,Q neutral;
+  class S good;
+  class R bad;
 ```
 
 </div>
@@ -176,14 +185,15 @@ class: text-center
 - **Medical:** define archetypes, review realism
 - **CS:** prompting, validation, local inference
 
-:::tip {title="Why it matters"}
-If the test is passed, we unlock privacy-safe NLP research.
-:::
+</div>
+</div>
 
-</div>
-</div>
+:::tip {title="Why it matters" class="mt-6 text-lg leading-snug font-semibold"}
+✅ **If the test is passed, we unlock privacy-safe NLP research.**
+:::
 
 <div class="mt-8 text-sm opacity-70">
 Contact: Philipp Wiesenbach · Emre Calik
+
 Dieterichlab, Computational Cardiology
 </div>
