@@ -202,10 +202,13 @@ class: text-center
   font-weight: 600;
   background: #ffffff;
 }
-.bar-green {
+.bar-med {
   position: relative;
 }
-.bar-blue {
+.bar-mi {
+  position: relative;
+}
+.bar-mix {
   position: relative;
 }
 .bar-start {
@@ -216,8 +219,9 @@ class: text-center
   border-top-right-radius: 999px;
   border-bottom-right-radius: 999px;
 }
-.bar-green::after,
-.bar-blue::after {
+.bar-med::after,
+.bar-mi::after,
+.bar-mix::after {
   content: "";
   position: absolute;
   left: 1px;
@@ -226,13 +230,17 @@ class: text-center
   bottom: 3px;
   border-radius: inherit;
 }
-.bar-green::after {
-  background: #86efac;
-  border: 1px solid #22c55e;
+.bar-med::after {
+  background: #bbf7d0;
+  border: 1px solid #16a34a;
 }
-.bar-blue::after {
+.bar-mi::after {
   background: #bfdbfe;
   border: 1px solid #3b82f6;
+}
+.bar-mix::after {
+  background: #fde68a;
+  border: 1px solid #d97706;
 }
 .milestone {
   position: relative;
@@ -247,6 +255,45 @@ class: text-center
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 2px;
+}
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 8px;
+  font-size: 10px;
+  color: #475569;
+  flex-wrap: wrap;
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.legend-swatch {
+  width: 14px;
+  height: 8px;
+  border-radius: 999px;
+}
+.legend-med {
+  background: #bbf7d0;
+  border: 1px solid #16a34a;
+}
+.legend-mi {
+  background: #bfdbfe;
+  border: 1px solid #3b82f6;
+}
+.legend-mix {
+  background: #fde68a;
+  border: 1px solid #d97706;
+}
+.legend-ms {
+  width: 10px;
+  height: 10px;
+  background: #f59e0b;
+  border: 1px solid #d97706;
+  transform: rotate(45deg);
   border-radius: 2px;
 }
 </style>
@@ -283,31 +330,31 @@ class: text-center
       </tr>
       <tr>
         <td class="gantt-task">Team Formation</td>
-        <td class="bar-green bar-start"></td><td class="bar-green"></td><td class="bar-green bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td class="bar-mix bar-start"></td><td class="bar-mix"></td><td class="bar-mix bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
       </tr>
       <tr>
         <td class="gantt-task">Literature Review</td>
-        <td class="bar-green bar-start"></td><td class="bar-green"></td><td class="bar-green"></td><td class="bar-green bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td class="bar-med bar-start"></td><td class="bar-med"></td><td class="bar-med"></td><td class="bar-med bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
       </tr>
       <tr>
         <td class="gantt-task">Data Collection</td>
-        <td></td><td class="bar-blue bar-start"></td><td class="bar-blue"></td><td class="bar-blue"></td><td class="bar-blue bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td></td><td class="bar-med bar-start"></td><td class="bar-med"></td><td class="bar-med"></td><td class="bar-med bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
       </tr>
       <tr>
         <td class="gantt-task">Template Design</td>
-        <td></td><td></td><td class="bar-blue bar-start"></td><td class="bar-blue"></td><td class="bar-blue"></td><td class="bar-blue bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td></td><td></td><td class="bar-mix bar-start"></td><td class="bar-mix"></td><td class="bar-mix"></td><td class="bar-mix bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
       </tr>
       <tr>
         <td class="gantt-task">LLM Setup</td>
-        <td></td><td></td><td></td><td class="bar-green bar-start"></td><td class="bar-green"></td><td class="bar-green"></td><td class="bar-green bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td></td><td></td><td></td><td class="bar-mi bar-start"></td><td class="bar-mi"></td><td class="bar-mi"></td><td class="bar-mi bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
       </tr>
       <tr>
         <td class="gantt-task">Generation</td>
-        <td></td><td></td><td></td><td></td><td class="bar-green bar-start"></td><td class="bar-green"></td><td class="bar-green"></td><td class="bar-green"></td><td class="bar-green"></td><td class="bar-green bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td></td><td></td><td></td><td></td><td class="bar-mi bar-start"></td><td class="bar-mi"></td><td class="bar-mi"></td><td class="bar-mi"></td><td class="bar-mi"></td><td class="bar-mi bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td>
       </tr>
       <tr>
         <td class="gantt-task">Validation</td>
-        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="bar-blue bar-start"></td><td class="bar-blue"></td><td class="bar-blue"></td><td class="bar-blue"></td><td class="bar-blue"></td><td class="bar-blue bar-end"></td><td></td><td></td><td></td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="bar-mix bar-start"></td><td class="bar-mix"></td><td class="bar-mix"></td><td class="bar-mix"></td><td class="bar-mix"></td><td class="bar-mix bar-end"></td><td></td><td></td><td></td>
       </tr>
       <tr>
         <td class="gantt-task">Mid-term Presentation</td>
@@ -315,7 +362,7 @@ class: text-center
       </tr>
       <tr>
         <td class="gantt-task">Finalization</td>
-        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="bar-green bar-start"></td><td class="bar-green bar-end"></td><td></td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="bar-mix bar-start"></td><td class="bar-mix bar-end"></td><td></td>
       </tr>
       <tr>
         <td class="gantt-task">Final Presentation</td>
@@ -323,6 +370,13 @@ class: text-center
       </tr>
     </tbody>
   </table>
+
+  <div class="legend">
+    <span class="legend-item"><span class="legend-swatch legend-med"></span>Medical</span>
+    <span class="legend-item"><span class="legend-swatch legend-mi"></span>Medical Informatics</span>
+    <span class="legend-item"><span class="legend-swatch legend-mix"></span>Mixed Team</span>
+    <span class="legend-item"><span class="legend-ms"></span>Milestone</span>
+  </div>
 </div>
 
 ---
