@@ -161,9 +161,173 @@ graph TD
 </div>
 </div>
 
+
 ---
-layout: end
 class: text-center
+---
+
+## Project Timeline
+
+<style>
+.gantt-wrap {
+  max-width: 980px;
+  margin: 14px auto 0;
+  overflow-x: auto;
+}
+.gantt-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 10px;
+  color: #334155;
+}
+.gantt-table th,
+.gantt-table td {
+  border: 1px solid #e2e8f0;
+  height: 18px;
+  padding: 0;
+  text-align: center;
+}
+.gantt-table thead th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  font-size: 9px;
+  white-space: nowrap;
+}
+.gantt-task {
+  width: 150px;
+  text-align: right !important;
+  padding-right: 8px !important;
+  font-weight: 600;
+  background: #ffffff;
+}
+.bar-green {
+  position: relative;
+}
+.bar-blue {
+  position: relative;
+}
+.bar-start {
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+}
+.bar-end {
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+}
+.bar-green::after,
+.bar-blue::after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  top: 3px;
+  bottom: 3px;
+  border-radius: inherit;
+}
+.bar-green::after {
+  background: #86efac;
+  border: 1px solid #22c55e;
+}
+.bar-blue::after {
+  background: #bfdbfe;
+  border: 1px solid #3b82f6;
+}
+.milestone {
+  position: relative;
+}
+.milestone::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #f59e0b;
+  border: 1px solid #d97706;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 2px;
+}
+</style>
+
+<div style="height: 14px;"></div>
+
+<div class="gantt-wrap">
+  <table class="gantt-table">
+    <thead>
+      <tr>
+        <th class="gantt-task">Task</th>
+        <th>12 Mar</th>
+        <th>19 Mar</th>
+        <th>26 Mar</th>
+        <th>2 Apr</th>
+        <th>9 Apr</th>
+        <th>16 Apr</th>
+        <th>23 Apr</th>
+        <th>30 Apr</th>
+        <th>7 May</th>
+        <th>14 May</th>
+        <th>21 May</th>
+        <th>28 May</th>
+        <th>4 Jun</th>
+        <th>11 Jun</th>
+        <th>18 Jun</th>
+        <th>25 Jun</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="gantt-task">Initial Presentation</td>
+        <td class="milestone"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td class="gantt-task">Team Formation</td>
+        <td class="bar-green bar-start"></td><td class="bar-green"></td><td class="bar-green bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td class="gantt-task">Literature Review</td>
+        <td class="bar-green bar-start"></td><td class="bar-green"></td><td class="bar-green"></td><td class="bar-green bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td class="gantt-task">Data Collection</td>
+        <td></td><td class="bar-blue bar-start"></td><td class="bar-blue"></td><td class="bar-blue"></td><td class="bar-blue bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td class="gantt-task">Template Design</td>
+        <td></td><td></td><td class="bar-blue bar-start"></td><td class="bar-blue"></td><td class="bar-blue"></td><td class="bar-blue bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td class="gantt-task">LLM Setup</td>
+        <td></td><td></td><td></td><td class="bar-green bar-start"></td><td class="bar-green"></td><td class="bar-green"></td><td class="bar-green bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td class="gantt-task">Generation</td>
+        <td></td><td></td><td></td><td></td><td class="bar-green bar-start"></td><td class="bar-green"></td><td class="bar-green"></td><td class="bar-green"></td><td class="bar-green"></td><td class="bar-green bar-end"></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td class="gantt-task">Validation</td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="bar-blue bar-start"></td><td class="bar-blue"></td><td class="bar-blue"></td><td class="bar-blue"></td><td class="bar-blue"></td><td class="bar-blue bar-end"></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td class="gantt-task">Mid-term Presentation</td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="milestone"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td class="gantt-task">Finalization</td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="bar-green bar-start"></td><td class="bar-green bar-end"></td><td></td>
+      </tr>
+      <tr>
+        <td class="gantt-task">Final Presentation</td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="milestone"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+class: text-center
+layout: end
 ---
 
 # The Clinical Turing Test
